@@ -1,1 +1,299 @@
+/* ==========================================================
+   PROJECT POLARIS
+   Version 0.2
+   The First Light
+========================================================== */
 
+
+/* ---------- RESET ---------- */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+/* ---------- ROOT COLORS ---------- */
+
+:root{
+
+    --space-dark:#050816;
+    --space-blue:#0C1633;
+    --space-purple:#1A1238;
+
+    --moon:#F8F7F2;
+
+    --text:#F7F8FA;
+
+    --glass:rgba(255,255,255,.08);
+
+    --gold:#D8C27A;
+
+}
+
+
+/* ---------- BODY ---------- */
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+body{
+
+    overflow:hidden;
+
+    width:100vw;
+    height:100vh;
+
+    color:var(--text);
+
+    font-family:'Inter',sans-serif;
+
+    background:
+    radial-gradient(circle at top,
+    rgba(31,60,114,.22),
+    transparent 45%),
+
+    radial-gradient(circle at bottom,
+    rgba(88,45,120,.12),
+    transparent 55%),
+
+    linear-gradient(
+        180deg,
+        var(--space-blue) 0%,
+        var(--space-dark) 70%,
+        #02040B 100%
+    );
+
+}
+
+
+/* ---------- BUTTONS ---------- */
+
+button{
+
+    border:none;
+
+    outline:none;
+
+    cursor:pointer;
+
+    font-family:inherit;
+
+}
+
+
+/* ---------- LINKS ---------- */
+
+a{
+
+    text-decoration:none;
+
+    color:inherit;
+
+}
+
+
+/* ---------- HIDDEN ---------- */
+
+.hidden{
+
+    display:none;
+
+}
+
+/* ==========================================================
+   04 LOADING SCREEN
+========================================================== */
+
+#loading-screen{
+
+    position:fixed;
+
+    inset:0;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:#02040B;
+
+    z-index:9999;
+
+    transition:opacity 1.5s ease;
+
+}
+
+.loading-content{
+
+    width:min(420px,85%);
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:24px;
+
+}
+
+.loading-content h2{
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:2rem;
+
+    font-weight:500;
+
+    letter-spacing:.08em;
+
+    color:rgba(247,248,250,.95);
+
+    text-align:center;
+
+}
+
+.progress-container{
+
+    width:100%;
+
+    height:2px;
+
+    overflow:hidden;
+
+    border-radius:999px;
+
+    background:rgba(255,255,255,.08);
+
+}
+
+#progress-bar{
+
+    width:0%;
+
+    height:100%;
+
+    background:linear-gradient(
+        90deg,
+        rgba(255,255,255,0),
+        rgba(248,247,242,.95),
+        rgba(255,255,255,0)
+    );
+
+    box-shadow:
+        0 0 12px rgba(248,247,242,.45);
+
+}
+
+#loading-percent{
+
+    font-size:.95rem;
+
+    letter-spacing:.25em;
+
+    color:rgba(247,248,250,.65);
+
+}
+
+/* ==========================================================
+   05 INTRO SCREEN
+========================================================== */
+
+#intro-screen{
+
+    position:fixed;
+
+    inset:0;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding:40px;
+
+    z-index:9000;
+
+    background:transparent;
+
+}
+
+.intro-content{
+
+    width:min(700px,90%);
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:28px;
+
+}
+
+.intro-line{
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-weight:400;
+
+    font-size:clamp(2rem,5vw,3.6rem);
+
+    color:rgba(247,248,250,.95);
+
+    opacity:0;
+
+    transform:translateY(20px);
+
+}
+
+#enter-btn{
+
+    margin-top:20px;
+
+    padding:16px 42px;
+
+    border-radius:999px;
+
+    background:rgba(255,255,255,.06);
+
+    border:1px solid rgba(255,255,255,.12);
+
+    color:white;
+
+    font-size:1rem;
+
+    letter-spacing:.08em;
+
+    backdrop-filter:blur(10px);
+
+    transition:
+        transform .35s ease,
+        background .35s ease,
+        border-color .35s ease,
+        box-shadow .35s ease;
+
+}
+
+#enter-btn:hover{
+
+    background:rgba(255,255,255,.10);
+
+    border-color:rgba(255,255,255,.25);
+
+    transform:translateY(-3px);
+
+    box-shadow:
+        0 10px 30px rgba(255,255,255,.08);
+
+}
