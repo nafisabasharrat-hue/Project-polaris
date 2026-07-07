@@ -1,1 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>Our Universe</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Parisienne&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Loading Screen -->
+    <section id="loading-screen">
+
+        <div class="loading-content">
+
+            <h2>Finding our little universe...</h2>
+
+            <div class="progress-container">
+                <div id="progress-bar"></div>
+            </div>
+
+            <p id="loading-percent">0%</p>
+
+        </div>
+
+    </section>
+
+    <!-- Intro Scene -->
+    <section id="intro-screen" class="hidden">
+
+        <div class="intro-content">
+
+            <h1 class="intro-line">
+                The universe is unimaginably vast.
+            </h1>
+
+            <h1 class="intro-line">
+                Yet somehow...
+            </h1>
+
+            <h1 class="intro-line">
+                it still led me to you.
+            </h1>
+
+            <button id="enter-btn">
+                Enter Our Universe
+            </button>
+
+        </div>
+
+    </section>
+
+    <!-- Main Universe -->
+    <main id="universe" class="hidden">
+
+        <!-- Moon -->
+        <div id="moon"></div>
+
+        <!-- Stars Layer -->
+        <div id="star-layer"></div>
+
+        <!-- Particle Layer -->
+        <div id="particle-layer"></div>
+
+        <!-- Shooting Stars -->
+        <div id="shooting-star-container"></div>
+
+        <!-- Music Button -->
+        <button id="music-toggle">
+            ♫
+        </button>
+
+        <!-- Progress Tracker -->
+        <div id="memory-counter">
+            0 / 15 Stars Discovered
+        </div>
+
+        <!-- Ending Constellation Container -->
+        <div id="constellation-container"></div>
+
+    </main>
+
+    <!-- Memory Modal -->
+    <div id="memory-modal" class="hidden">
+
+        <div class="modal-backdrop"></div>
+
+        <div class="memory-card">
+
+            <button id="close-memory">
+                ×
+            </button>
+
+            <img
+                id="memory-image"
+                src=""
+                alt="Memory Image"
+            >
+
+            <h2 id="memory-title">
+                Memory Title
+            </h2>
+
+            <div id="memory-message">
+                Memory Message
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Final Ending Screen -->
+    <section id="ending-screen" class="hidden">
+
+        <div class="ending-content">
+
+            <h1>
+                To Be Continued...
+            </h1>
+
+            <p id="ending-message">
+
+                Life won't always be easy.
+
+                But whenever the world feels loud,
+
+                I hope you remember this little universe.
+
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- Audio -->
+    <audio
+        id="background-music"
+        loop
+        preload="auto">
+
+        <source
+            src="assets/music/ambience.mp3"
+            type="audio/mpeg">
+
+    </audio>
+
+    <!-- Data -->
+    <script src="data.js"></script>
+
+    <!-- Main JS -->
+    <script src="script.js"></script>
+
+</body>
+</html>
