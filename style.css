@@ -364,3 +364,54 @@ body{
     opacity:.28;
 
 }
+/* ==========================================================
+   08 BACKGROUND STARS
+========================================================== */
+
+#background-stars{
+
+    position:absolute;
+
+    inset:0;
+
+    overflow:hidden;
+
+}
+
+.bg-star{
+
+    position:absolute;
+
+    width:2px;
+
+    height:2px;
+
+    border-radius:50%;
+
+    background:white;
+
+    opacity:.25;
+
+    animation:twinkle 5s ease-in-out infinite;
+
+}
+
+@keyframes twinkle{
+
+    0%,100%{
+
+        opacity:.15;
+
+        transform:scale(1);
+
+    }
+
+    50%{
+
+        opacity:.7;
+
+        transform:scale(1.35);
+
+    }
+
+}
