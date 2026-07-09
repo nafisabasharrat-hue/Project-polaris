@@ -291,3 +291,34 @@ a{
         0 10px 30px rgba(255,255,255,.08);
 
 }
+
+/* ==========================================================
+   06 THE QUIET SKY
+========================================================== */
+
+body{
+
+    background:
+        radial-gradient(
+            circle at top,
+            #13224d 0%,
+            #091229 40%,
+            #040812 75%,
+            #02040B 100%
+        );
+
+    overflow:hidden;
+
+}
+
+#universe{
+
+    position:fixed;
+
+    inset:0;
+
+    overflow:hidden;
+
+    z-index:-1;
+
+}
