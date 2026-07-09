@@ -322,3 +322,37 @@ body{
     z-index:-1;
 
 }
+
+/* ==========================================================
+   07 MOON
+========================================================== */
+
+#moon{
+
+    position:absolute;
+
+    top:10%;
+
+    right:12%;
+
+    width:130px;
+
+    height:130px;
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            circle,
+            #f5f2e8 0%,
+            #d9d7cf 65%,
+            #c6c4bc 100%
+        );
+
+    box-shadow:
+        0 0 35px rgba(255,255,240,.20),
+        0 0 80px rgba(255,255,240,.08);
+
+    opacity:.28;
+
+}
