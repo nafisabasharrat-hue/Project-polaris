@@ -54,12 +54,21 @@ function showIntro() {
 
         }, index * 1800);
 
-    });
+    }); 
+    
+    enterButton.addEventListener("click", () => {
+
+    document.getElementById("intro-screen").style.display = "none";
+
+    document.getElementById("universe").classList.remove("hidden");
+
+});
+
 
     setTimeout(() => {
 
-        enterButton.style.opacity = "1";
-
+        enterButton.style.opacity = "1"; 
+        
         enterButton.style.transform = "translateY(0)";
 
     }, introLines.length * 1800 + 500);
