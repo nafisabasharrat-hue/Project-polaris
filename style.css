@@ -249,6 +249,10 @@ a{
 
 #enter-btn{
 
+   opacity:0;
+   
+   transform:translateY(20px);
+
     margin-top:20px;
 
     padding:16px 42px;
