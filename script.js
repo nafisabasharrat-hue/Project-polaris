@@ -70,7 +70,10 @@ function showIntro() {
 // BACKGROUND STARS
 // ==========================================================
 
-const starContainer = document.getElementById("background-stars");
+if (starContainer) {
+    starContainer.appendChild(star);
+}
+
 
 const SAFE_ZONE = {
 
