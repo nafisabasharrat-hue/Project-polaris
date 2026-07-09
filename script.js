@@ -55,15 +55,6 @@ function showIntro() {
         }, index * 1800);
 
     }); 
-    
-    enterButton.addEventListener("click", () => {
-
-    document.getElementById("intro-screen").style.display = "none";
-
-    document.getElementById("universe").classList.remove("hidden");
-
-});
-
 
     setTimeout(() => {
 
