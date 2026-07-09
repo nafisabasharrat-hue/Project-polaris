@@ -205,7 +205,9 @@ a{
 
     justify-content:center;
 
-    align-items:center;
+    align-items:flex-start;
+
+   padding-top:14vh;
 
     text-align:center;
 
