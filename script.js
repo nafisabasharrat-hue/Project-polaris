@@ -65,3 +65,64 @@ function showIntro() {
     }, introLines.length * 1800 + 500);
 
 }
+
+// ==========================================================
+// BACKGROUND STARS
+// ==========================================================
+
+const starContainer = document.getElementById("background-stars");
+
+const SAFE_ZONE = {
+
+    left:25,
+
+    right:75,
+
+    top:18,
+
+    bottom:72
+
+};
+
+for(let i=0;i<30;i++){
+
+    const star=document.createElement("div");
+
+    star.className="bg-star";
+
+    let x;
+    let y;
+
+    do{
+
+        x=Math.random()*100;
+        y=Math.random()*100;
+
+    }
+
+    while(
+
+        x>SAFE_ZONE.left &&
+        x<SAFE_ZONE.right &&
+        y>SAFE_ZONE.top &&
+        y<SAFE_ZONE.bottom
+
+    );
+
+    star.style.left=x+"%";
+    star.style.top=y+"%";
+
+    star.style.opacity=(0.2+Math.random()*0.6);
+
+    star.style.animationDelay=
+        (Math.random()*5)+"s";
+
+    star.style.width=
+        (1+Math.random()*2)+"px";
+
+    star.style.height=
+        star.style.width;
+
+    starContainer.appendChild(star);
+
+}
