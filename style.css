@@ -464,3 +464,100 @@ body{
     left:78%;
 
 }
+/* =====================================================
+   MEMORY CARD
+===================================================== */
+
+#memory-card{
+
+    position:fixed;
+
+    inset:0;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:rgba(0,0,0,.45);
+
+    backdrop-filter:blur(6px);
+
+    opacity:0;
+
+    pointer-events:none;
+
+    transition:opacity .45s ease;
+
+    z-index:10000;
+
+}
+
+#memory-card.active{
+
+    opacity:1;
+
+    pointer-events:auto;
+
+}
+
+.memory-content{
+
+    width:min(90%,420px);
+
+    background:rgba(18,23,40,.88);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    border-radius:24px;
+
+    padding:30px;
+
+    text-align:center;
+
+    color:white;
+
+    box-shadow:0 20px 60px rgba(0,0,0,.45);
+
+    transform:translateY(20px);
+
+    transition:transform .45s ease;
+
+}
+
+#memory-card.active .memory-content{
+
+    transform:translateY(0);
+
+}
+
+#memory-photo{
+
+    width:100%;
+
+    border-radius:18px;
+
+    margin-bottom:18px;
+
+}
+
+#close-memory{
+
+    position:absolute;
+
+    top:18px;
+
+    right:18px;
+
+    background:none;
+
+    border:none;
+
+    color:white;
+
+    font-size:22px;
+
+    cursor:pointer;
+
+}
