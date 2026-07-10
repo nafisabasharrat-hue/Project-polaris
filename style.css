@@ -415,3 +415,45 @@ body{
     }
 
 }
+/* =====================================================
+   MEMORY STAR
+===================================================== */
+
+.memory-star{
+
+    position:absolute;
+
+    width:14px;
+
+    height:14px;
+
+    border-radius:50%;
+
+    background:white;
+
+    box-shadow:
+        0 0 10px rgba(255,255,255,.9),
+        0 0 24px rgba(255,255,255,.6);
+
+    cursor:pointer;
+
+    animation:
+        twinkle 3s infinite ease-in-out;
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease;
+
+    z-index:12;
+
+}
+
+.memory-star:hover{
+
+    transform:scale(1.5);
+
+    box-shadow:
+        0 0 18px white,
+        0 0 35px white;
+
+}
