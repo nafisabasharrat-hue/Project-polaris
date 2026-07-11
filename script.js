@@ -153,6 +153,7 @@ memoryStar1.onclick = function () {
 
     memoryCard.classList.add("active");
 };
+
 closeMemory.onclick = function () {
 
     memoryCard.classList.remove("active");
