@@ -28,7 +28,9 @@ const loadingAnimation = setInterval(() => {
             setTimeout(() => {
 
                 loadingScreen.style.display = "none";
-
+                
+                document.getElementById("intro-screen").classList.remove("hidden");
+                
                 showIntro();
 
             }, 1500);
