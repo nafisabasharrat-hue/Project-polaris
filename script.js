@@ -145,6 +145,15 @@ const closeMemory = document.getElementById("close-memory");
 
 memoryStar1.onclick = function () {
 
+    memoryStar1.classList.add("discovered");
+
+    document.getElementById("memory-counter").textContent =
+        "1 / 15 Stars Discovered";
+
+    memoryCard.classList.add("active");
+
+};
+
     console.log("⭐ Star clicked");
 
     memoryCard.classList.add("active");
