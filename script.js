@@ -134,6 +134,7 @@ enterButton.addEventListener("click", () => {
     document.getElementById("universe").classList.remove("hidden");
 
 });
+
 // ==========================================================
 // FIRST MEMORY
 // ==========================================================
@@ -142,14 +143,16 @@ const memoryStar1 = document.getElementById("memory-star-1");
 const memoryCard = document.getElementById("memory-card");
 const closeMemory = document.getElementById("close-memory");
 
-memoryStar1.addEventListener("click", () => {
+memoryStar1.onclick = function () {
+
+    console.log("⭐ Star clicked");
 
     memoryCard.classList.add("active");
 
-});
+};
 
-closeMemory.addEventListener("click", () => {
+closeMemory.onclick = function () {
 
     memoryCard.classList.remove("active");
 
-});
+};
