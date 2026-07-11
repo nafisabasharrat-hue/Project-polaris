@@ -334,6 +334,8 @@ body{
 ========================================================== */
 
 #moon{
+
+   animation:moonGlow 10s ease-in-out infinite;
    
     position:absolute;
 
@@ -341,29 +343,41 @@ body{
 
     right:12%;
 
-    width:130px;
-
-    height:130px;
+    width:140px;
+    height:140px;
 
     border-radius:50%;
 
     background:
 
-        radial-gradient(
-            circle at 35% 30%,
-            rgba(255,255,255,.98) 0%,
-            rgba(248,246,239,.95) 22%,
-            rgba(225,222,212,.92) 58%,
-            rgba(188,186,180,.88) 100%
-        );
+    radial-gradient(circle at 28% 28%,
+    rgba(255,255,255,.30) 0%,
+    transparent 18%),
+
+    radial-gradient(circle at 68% 62%,
+    rgba(180,180,180,.12) 0%,
+    transparent 16%),
+
+    radial-gradient(circle at 52% 40%,
+    rgba(160,160,160,.08) 0%,
+    transparent 12%),
+
+    radial-gradient(circle at 38% 72%,
+    rgba(150,150,150,.10) 0%,
+    transparent 18%),
+
+    radial-gradient(circle at center,
+    #f8f6ef 0%,
+    #ebe8df 65%,
+    #d9d6cd 100%);
 
     box-shadow:
 
-        0 0 25px rgba(255,255,240,.18),
-        0 0 60px rgba(255,255,240,.10),
-        0 0 120px rgba(255,255,240,.05);
+        0 0 35px rgba(255,248,220,.22),
 
-    opacity:.32;
+        0 0 70px rgba(255,248,220,.12),
+
+        0 0 120px rgba(180,200,255,.06);
 
     overflow:hidden;
 
@@ -381,21 +395,9 @@ body{
 
     background:
 
-        radial-gradient(circle at 30% 35%,
-            rgba(140,140,140,.16) 0 7%,
-            transparent 8%),
-
-        radial-gradient(circle at 62% 42%,
-            rgba(145,145,145,.13) 0 5%,
-            transparent 6%),
-
-        radial-gradient(circle at 42% 70%,
-            rgba(135,135,135,.15) 0 8%,
-            transparent 9%),
-
-        radial-gradient(circle at 72% 68%,
-            rgba(150,150,150,.12) 0 4%,
-            transparent 5%);
+        radial-gradient(circle at 25% 25%,
+        rgba(255,255,255,.35),
+        transparent 45%);
 
 }
 
@@ -411,66 +413,12 @@ body{
 
     background:
 
-        radial-gradient(
-            circle,
-            rgba(255,255,255,.05),
-            transparent 70%
-        );
-
-    mix-blend-mode:soft-light;
-
-}
-/* ==========================================================
-   08 BACKGROUND STARS
-========================================================== */
-
-#background-stars{
-
-    position:absolute;
-
-    inset:0;
-
-    overflow:hidden;
+        radial-gradient(circle at 78% 82%,
+        rgba(0,0,0,.10),
+        transparent 55%);
 
 }
 
-.bg-star{
-
-    position:absolute;
-
-    width:2px;
-
-    height:2px;
-
-    border-radius:50%;
-
-    background:white;
-
-    opacity:.25;
-
-    animation:twinkle 5s ease-in-out infinite;
-
-}
-
-@keyframes twinkle{
-
-    0%,100%{
-
-        opacity:.15;
-
-        transform:scale(1);
-
-    }
-
-    50%{
-
-        opacity:.7;
-
-        transform:scale(1.35);
-
-    }
-
-}
 /* =====================================================
    MEMORY STAR
 ===================================================== */
@@ -644,5 +592,24 @@ body{
     font-size:22px;
 
     cursor:pointer;
+
+}
+@keyframes moonGlow{
+
+    0%,100%{
+
+        transform:scale(1);
+
+        filter:brightness(1);
+
+    }
+
+    50%{
+
+        transform:scale(1.015);
+
+        filter:brightness(1.05);
+
+    }
 
 }
