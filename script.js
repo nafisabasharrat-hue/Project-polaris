@@ -4,6 +4,7 @@
 // ==========================================================
 
 const progressBar = document.getElementById("progress-bar");
+const loadingPercent = document.getElementById("loading-percent");
 const loadingScreen = document.getElementById("loading-screen");
 const introLines = document.querySelectorAll(".intro-line");
 const enterButton = document.getElementById("enter-btn");
@@ -15,7 +16,7 @@ const loadingAnimation = setInterval(() => {
     progress += 1;
 
     progressBar.style.width = progress + "%";
-
+    loadingPercent.textContent = progress + "%";
     if (progress >= 100) {
 
         clearInterval(loadingAnimation);
