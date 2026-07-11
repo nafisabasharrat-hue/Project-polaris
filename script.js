@@ -152,7 +152,7 @@ memoryStar1.onclick = function () {
         "1 / 15 Stars Discovered";
 
     memoryCard.classList.add("active");
-
+};
 closeMemory.onclick = function () {
 
     memoryCard.classList.remove("active");
