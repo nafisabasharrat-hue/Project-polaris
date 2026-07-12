@@ -335,87 +335,24 @@ body{
 
 #moon{
 
-   animation:moonGlow 10s ease-in-out infinite;
-   
     position:absolute;
 
-    top:10%;
+    top:8%;
+    right:8%;
 
-    right:12%;
+    width:220px;
+    height:220px;
 
-    width:140px;
-    height:140px;
+    background-image:url("assets/images/moon-texture.png");
+    background-size:contain;
+    background-repeat:no-repeat;
+    background-position:center;
 
-    border-radius:50%;
+    animation:moonGlow 10s ease-in-out infinite;
 
-    background:
-
-    radial-gradient(circle at 28% 28%,
-    rgba(255,255,255,.30) 0%,
-    transparent 18%),
-
-    radial-gradient(circle at 68% 62%,
-    rgba(180,180,180,.12) 0%,
-    transparent 16%),
-
-    radial-gradient(circle at 52% 40%,
-    rgba(160,160,160,.08) 0%,
-    transparent 12%),
-
-    radial-gradient(circle at 38% 72%,
-    rgba(150,150,150,.10) 0%,
-    transparent 18%),
-
-    radial-gradient(circle at center,
-    #f8f6ef 0%,
-    #ebe8df 65%,
-    #d9d6cd 100%);
-
-    box-shadow:
-
-        0 0 35px rgba(255,248,220,.22),
-
-        0 0 70px rgba(255,248,220,.12),
-
-        0 0 120px rgba(180,200,255,.06);
-
-    overflow:hidden;
-
-}
-
-#moon::before{
-
-    content:"";
-
-    position:absolute;
-
-    inset:0;
-
-    border-radius:50%;
-
-    background:
-
-        radial-gradient(circle at 25% 25%,
-        rgba(255,255,255,.35),
-        transparent 45%);
-
-}
-
-#moon::after{
-
-    content:"";
-
-    position:absolute;
-
-    inset:0;
-
-    border-radius:50%;
-
-    background:
-
-        radial-gradient(circle at 78% 82%,
-        rgba(0,0,0,.10),
-        transparent 55%);
+    filter:
+        drop-shadow(0 0 20px rgba(255,248,220,.35))
+        drop-shadow(0 0 50px rgba(180,210,255,.20));
 
 }
 
