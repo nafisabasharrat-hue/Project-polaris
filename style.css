@@ -359,6 +359,54 @@ body{
 
 }
 
+/* ===============================
+   Background Stars
+================================ */
+
+#background-stars{
+
+    position:absolute;
+
+    inset:0;
+
+    overflow:hidden;
+
+    z-index:1;
+
+}
+
+.bg-star{
+
+    position:absolute;
+
+    width:2px;
+
+    height:2px;
+
+    border-radius:50%;
+
+    background:white;
+
+    opacity:.35;
+
+    animation:twinkle 5s ease-in-out infinite;
+
+}
+
+@keyframes twinkle{
+
+    0%,100%{
+        opacity:.2;
+        transform:scale(1);
+    }
+
+    50%{
+        opacity:.9;
+        transform:scale(1.4);
+    }
+
+}
+
 /* =====================================================
    MEMORY STAR
 ===================================================== */
