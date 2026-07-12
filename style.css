@@ -339,12 +339,15 @@ body{
 
     top:8%;
     right:8%;
-
+   
+   border-radius:50%;
+   overflow:hidden;
+   
     width:220px;
     height:220px;
 
     background-image:url("assets/images/moon-texture.png");
-    background-size:contain;
+    background-size:cover;
     background-repeat:no-repeat;
     background-position:center;
 
