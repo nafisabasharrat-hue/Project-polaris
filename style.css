@@ -445,12 +445,82 @@ body{
         0 0 35px white;
 
 }
+
 #memory-star-1{
 
     top:40%;
 
     left:22%;
 
+}
+#memory-star-2{
+    top:18%;
+    left:22%;
+}
+
+#memory-star-3{
+    top:26%;
+    left:42%;
+}
+
+#memory-star-4{
+    top:16%;
+    left:64%;
+}
+
+#memory-star-5{
+    top:42%;
+    left:16%;
+}
+
+#memory-star-6{
+    top:48%;
+    left:34%;
+}
+
+#memory-star-7{
+    top:40%;
+    left:58%;
+}
+
+#memory-star-8{
+    top:58%;
+    left:82%;
+}
+
+#memory-star-9{
+    top:68%;
+    left:24%;
+}
+
+#memory-star-10{
+    top:74%;
+    left:46%;
+}
+
+#memory-star-11{
+    top:62%;
+    left:66%;
+}
+
+#memory-star-12{
+    top:80%;
+    left:74%;
+}
+
+#memory-star-13{
+    top:32%;
+    left:86%;
+}
+
+#memory-star-14{
+    top:54%;
+    left:50%;
+}
+
+#memory-star-15{
+    top:86%;
+    left:38%;
 }
 .memory-star.discovered{
 
