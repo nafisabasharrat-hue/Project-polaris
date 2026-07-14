@@ -13,9 +13,9 @@ const memories = [
 },
 
 {
-    title:"Memory 3",
+    title:"Movie night 🎥",
     image:"assets/photos/memory3.jpg",
-    text:"Write your memory here."
+    text:"Our first movie date, eagerly waiting for our next movie nights"
 },
 
 {
