@@ -341,9 +341,13 @@ body{
     height:170px;
 
     background-image:url("https://nafisabasharrat-hue.github.io/Project-polaris/assets/moon-texture-optimized-2.webp");
-    background-size:cover;
+    background-size:contain;
     background-position:center;
     background-repeat:no-repeat;
+
+    background-color: transparent;
+    border-radius: 50%;
+
 
     z-index:999;
 }
