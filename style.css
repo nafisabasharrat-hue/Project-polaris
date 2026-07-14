@@ -410,39 +410,48 @@ body{
 
     position:absolute;
 
-    width:14px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
 
-    height:14px;
+    width:24px;
+    height:24px;
 
-    border-radius:50%;
+    color:#ffffff;
 
-    background:white;
-
-    box-shadow:
-        0 0 10px rgba(255,255,255,.9),
-        0 0 24px rgba(255,255,255,.6);
+    font-size:18px;
+    font-weight:300;
 
     cursor:pointer;
 
-    animation:
-        twinkle 3s infinite ease-in-out;
+    user-select:none;
+
+    text-shadow:
+        0 0 8px rgba(255,255,255,.95),
+        0 0 18px rgba(255,255,255,.6),
+        0 0 32px rgba(255,255,255,.25);
+
+    animation:twinkle 3.5s ease-in-out infinite;
 
     transition:
         transform .35s ease,
-        box-shadow .35s ease;
+        text-shadow .35s ease;
 
     z-index:9999;
+}
 
-   pointer-events:auto;
+.memory-star::before{
+    content:"✦";
 }
 
 .memory-star:hover{
 
-    transform:scale(1.5);
+    transform:scale(1.3);
 
-    box-shadow:
-        0 0 18px white,
-        0 0 35px white;
+    text-shadow:
+        0 0 12px white,
+        0 0 25px white,
+        0 0 45px rgba(255,255,255,.35);
 
 }
 
