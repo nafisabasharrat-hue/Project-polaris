@@ -411,7 +411,9 @@ body{
 
     width:26px;
     height:26px;
-
+    
+    z-index:9999;
+    
     background-image:url("assets/stars/star-optimized.webp");
     background-size:contain;
     background-repeat:no-repeat;
