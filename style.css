@@ -519,13 +519,11 @@ body{
 }
 .memory-star.discovered{
 
-    background:#ffffff;
+    transform:scale(1.15);
 
-    box-shadow:
-        0 0 12px rgba(255,255,255,.95),
-        0 0 30px rgba(255,255,255,.45);
-
-    transform:scale(1.2);
+    filter:
+        drop-shadow(0 0 12px rgba(255,255,255,.9))
+        drop-shadow(0 0 28px rgba(255,255,255,.45));
 
 }
 /* =====================================================
