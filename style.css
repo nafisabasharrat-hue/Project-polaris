@@ -337,8 +337,8 @@ body{
     top:8%;
     right:8%;
 
-    width:170px;
-    height:170px;
+    width:150px;
+    height:1500px;
 
     background-image:url("https://nafisabasharrat-hue.github.io/Project-polaris/assets/Untitled3_20260714172915.png");
     background-size:contain;
@@ -349,6 +349,10 @@ body{
     border-radius: 50%;
 
 
+   filter:
+  drop-shadow(0 0 15px rgba(255,248,220,.35))
+  drop-shadow(0 0 35px rgba(180,210,255,.12));
+   
     z-index:999;
 }
 
@@ -445,9 +449,9 @@ body{
 }
 #memory-star-1{
 
-    top:28%;
+    top:40%;
 
-    left:78%;
+    left:22%;
 
 }
 .memory-star.discovered{
