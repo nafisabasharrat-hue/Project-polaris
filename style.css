@@ -405,43 +405,27 @@ body{
 /* =====================================================
    MEMORY STAR
 ===================================================== */
-
-.memory-star{
+ .memory-star{
 
     position:absolute;
 
-    display:flex;
-    justify-content:center;
-    align-items:center;
+    width:26px;
+    height:26px;
 
-    width:24px;
-    height:24px;
+    background-image:url("assets/stars/star-optimized.webp");
+    background-size:contain;
+    background-repeat:no-repeat;
+    background-position:center;
 
-    color:#ffffff;
-
-    font-size:18px;
-    font-weight:300;
+    background-color:transparent;
 
     cursor:pointer;
 
-    user-select:none;
+    animation:twinkle 3s infinite ease-in-out;
 
-    text-shadow:
-        0 0 8px rgba(255,255,255,.95),
-        0 0 18px rgba(255,255,255,.6),
-        0 0 32px rgba(255,255,255,.25);
-
-    animation:twinkle 3.5s ease-in-out infinite;
-
-    transition:
-        transform .35s ease,
-        text-shadow .35s ease;
-
-    z-index:9999;
-}
-
-.memory-star::before{
-    content:"✦";
+    filter:
+        drop-shadow(0 0 8px rgba(255,255,255,.55))
+        drop-shadow(0 0 18px rgba(255,255,255,.25));
 }
 
 .memory-star:hover{
