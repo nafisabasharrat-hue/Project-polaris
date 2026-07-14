@@ -143,6 +143,7 @@ enterButton.addEventListener("click", () => {
 // ==========================================================
 
 const memoryStar1 = document.getElementById("memory-star-1");
+console.log(memoryStar1);
 const memoryCard = document.getElementById("memory-card");
 const closeMemory = document.getElementById("close-memory");
 
