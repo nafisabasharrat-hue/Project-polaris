@@ -142,23 +142,45 @@ enterButton.addEventListener("click", () => {
 // FIRST MEMORY
 // ==========================================================
 
-const memoryStar1 = document.getElementById("memory-star-1");
-console.log(memoryStar1);
 const memoryCard = document.getElementById("memory-card");
+const memoryTitle = document.getElementById("memory-title");
+const memoryText = document.getElementById("memory-text");
+const memoryPhoto = document.getElementById("memory-photo");
 const closeMemory = document.getElementById("close-memory");
+const counter = document.getElementById("memory-counter");
 
-memoryStar1.onclick = function () {
+const stars = document.querySelectorAll(".memory-star");
 
-    memoryStar1.classList.add("discovered");
+let discoveredStars = 0;
 
-    document.getElementById("memory-counter").textContent =
-        "1 / 15 Stars Discovered";
+stars.forEach((star, index) => {
 
-    memoryCard.classList.add("active");
-};
+    star.addEventListener("click", () => {
 
-closeMemory.onclick = function () {
+        const memory = memories[index];
+
+        memoryTitle.textContent = memory.title;
+        memoryText.textContent = memory.text;
+        memoryPhoto.src = memory.image;
+
+        if (!star.classList.contains("discovered")) {
+
+            star.classList.add("discovered");
+
+            discoveredStars++;
+
+            counter.textContent =
+                `${discoveredStars} / 15 Stars Discovered`;
+        }
+
+        memoryCard.classList.add("active");
+
+    });
+
+});
+
+closeMemory.addEventListener("click", () => {
 
     memoryCard.classList.remove("active");
 
-};
+});
