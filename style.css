@@ -334,29 +334,23 @@ body{
 ========================================================== */
 
 #moon{
-
     position:absolute;
-
     top:8%;
     right:8%;
-   
-   border-radius:50%;
-   overflow:hidden;
-   
+
     width:170px;
     height:170px;
-
-    background-image:url("assets/images/moon-texture.png");
+   
+    background-image: url("assets/moon-texture-optimized-2.webp");
     background-size:cover;
-    background-repeat:no-repeat;
     background-position:center;
+    background-repeat:no-repeat;
 
     animation:moonGlow 10s ease-in-out infinite;
 
     filter:
         drop-shadow(0 0 20px rgba(255,248,220,.35))
         drop-shadow(0 0 50px rgba(180,210,255,.20));
-
 }
 
 /* ===============================
