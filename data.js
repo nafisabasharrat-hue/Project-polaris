@@ -7,9 +7,9 @@ const memories = [
 },
 
 {
-    title:"Memory 2",
+    title:"First glance",
     image:"assets/photos/memory2.jpg",
-    text:"Write your memory here."
+    text:"i looked at it and went. MHMMMM okay. Definitely attracted but the bio was too questionable."
 },
 
 {
