@@ -31,7 +31,7 @@ const memories = [
 },
 
 {
-    title:"My favourite picture of you",
+    title:"My favourite picture of you🖼",
     image:"assets/photos/memory6.jpg",
     text:"THIS WAS DIFFICULT. you look good in almost all the pictures you send me, but this was a photo you didn't although i love your smile here, it makes me smile"
 },
@@ -43,9 +43,9 @@ const memories = [
 },
 
 {
-    title:"Memory 8",
+    title:"our pinkies are tied together🎗",
     image:"assets/photos/memory8.jpg",
-    text:"Write your memory here."
+    text:"You know the red string theory? our pinkies are tied just like that tho that wasn't what i was thinking when i did this, i thought its a cute way of bringing you closer to me."
 },
 
 {
