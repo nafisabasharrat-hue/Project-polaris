@@ -19,16 +19,16 @@ const memories = [
 },
 
 {
-    title:"Memory 4",
+    title:"Our playdate 🧸",
     image:"assets/photos/memory4.jpg",
-    text:"Write your memory here."
+    text:"It was sooo fun drawing with you, one thing i knew fosho was that you are fond of dihs be it small or toxic."
 },
 
 {
-    title:"Memory 5",
+    title:"My favourite memory of us",
     image:"assets/photos/memory5.jpg",
-    text:"Write your memory here."
-},
+    text:"It has to be our first facetime. It was so cute and shy and honestly this us exactly how i picture our first meetup with you all blushig and cute."
+}
 
 {
     title:"Memory 6",
