@@ -37,9 +37,9 @@ const memories = [
 },
 
 {
-    title:"Memory 7",
+    title:"Shami 🎭",
     image:"assets/photos/memory7.jpg",
-    text:"Write your memory here."
+    text:"You look so incredibly hot in here, i had to appreciate the visuals in this picture come on 😒 ive honestly got so many more i want to put but I'll stop here ☹ "
 },
 
 {
