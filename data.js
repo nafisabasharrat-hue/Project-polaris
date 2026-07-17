@@ -28,10 +28,10 @@ const memories = [
     title:"My favourite memory of us",
     image:"assets/photos/memory5.jpg",
     text:"It has to be our first facetime. It was so cute and shy and honestly this us exactly how i picture our first meetup with you all blushig and cute."
-}
+},
 
 {
-    title:"Memory 6",
+    title:"My favourite picture of you",
     image:"assets/photos/memory6.jpg",
     text:"Write your memory here."
 },
