@@ -55,9 +55,9 @@ const memories = [
 },
 
 {
-    title:"Memory 10",
+    title:"The eyes of the man i fell in love with 💫",
     image:"assets/photos/memory10.jpg",
-    text:"Write your memory here."
+    text:"The spark and the warmth in your eyes is everything i need to look at to make my worst day better, the way your eyelids curve into your eyeshape, the way they smile with you is what i love."
 },
 
 {
