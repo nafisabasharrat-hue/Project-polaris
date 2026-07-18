@@ -7,7 +7,7 @@ const memories = [
 },
 
 {
-    title:"First glance",
+    title:"First glance 👤",
     image:"assets/photos/memory2.jpg",
     text:"i looked at it and went. MHMMMM okay. Definitely attracted but the bio was too questionable."
 },
@@ -25,13 +25,13 @@ const memories = [
 },
 
 {
-    title:"My favourite memory of us",
+    title:"My favourite memory of us 💭",
     image:"assets/photos/memory5.jpg",
     text:"It has to be our first facetime. It was so cute and shy and honestly this is exactly how i picture our first meetup with you all blushing and cute."
 },
 
 {
-    title:"My favourite picture of you🖼",
+    title:"My favourite picture of you 🖼",
     image:"assets/photos/memory6.jpg",
     text:"THIS WAS DIFFICULT. you look good in almost all the pictures you send me, but this was a photo you didn't although i love your smile here, it makes me smile"
 },
