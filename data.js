@@ -49,9 +49,9 @@ const memories = [
 },
 
 {
-    title:"Memory 9",
+    title:"Calls 📞",
     image:"assets/photos/memory9.jpg",
-    text:"Write your memory here."
+    text:"As deeply i miss hearing your voice, i also miss yapping to you till lateee at night, unfortunately we couldn't call at night anymore becauseof my curfew but we still did but now we don't at all anymore which is upsetting but i think of all the silly conversations, the deep ones, the sweet ones, soneone said to me that communication is key but doesn't apply it 😒. I remember i yelled really loudly after i saw a cockroach on the floor, the times we've laughed together."
 },
 
 {
