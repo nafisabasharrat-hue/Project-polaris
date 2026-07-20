@@ -64,7 +64,8 @@ const memories = [
     title:"Silly baby 🐣",
     image:"assets/photos/memory11.jpg",
     text:"Your silly and playful personality is soooooo cute, oml i originally had so many other cute photos of you but you sent me this and i had to edit out the previous one because this is sooo cute 😻. It's like you're peeking at me and your eyes are smiling too, insanely adorable."
-
+},     
+    
 {
     title:"Memory 12",
     image:"assets/photos/memory12.jpg",
