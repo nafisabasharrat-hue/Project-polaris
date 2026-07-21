@@ -51,7 +51,7 @@ const memories = [
 {
     title:"Calls 📞",
     image:"assets/photos/memory9.jpg",
-    text:"As deeply i miss hearing your voice, i also miss yapping to you till lateee at night, unfortunately we couldn't call at night anymore becauseof my curfew but we still did but now we don't at all anymore which is upsetting but i think of all the silly conversations, the deep ones, the sweet ones, soneone said to me that communication is key but doesn't apply it 😒. I remember i yelled really loudly after i saw a cockroach on the floor, the times we've laughed together."
+    text:"As deeply i miss hearing your voice, i also miss yapping to you till lateee at night, unfortunately we couldn't call at night anymore because of my curfew but we still did but now we don't at all anymore which is upsetting but i think of all the silly conversations, the deep ones, the sweet ones, someone said to me that communication is key but doesn't apply it 😒. I remember i yelled really loudly after i saw a cockroach on the floor which was so funny and all the times we've laughed together."
 },
 
 {
@@ -67,15 +67,15 @@ const memories = [
 },     
     
 {
-    title:"Memory 12",
+    title:"The things that i wish i could do with you 🤍",
     image:"assets/photos/memory12.jpg",
-    text:"Write your memory here."
+    text:"Hugging you is on the top of my list, i want to feel your warmth against me, take long late night walks with you, cook with you which i know will be chaotic but its genuinely just the thought of being with you that gives me joy. Watch the sunset with you, fall asleep in your arms, hold you when things get too tough for you and so much more." 
 },
 
 {
-    title:"Memory 13",
+    title:"Letters i never sent 💌",
     image:"assets/photos/memory13.jpg",
-    text:"Write your memory here."
+    text:"My journal is filled with letters about you, how i feel about you, how i view you"
 },
 
 {
