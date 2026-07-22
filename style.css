@@ -712,7 +712,7 @@ body{
     opacity:0;
 
     transform:
-        translate(420px,420px)
+        translate(-500px,500px)
         rotate(-35deg);
 
 }
