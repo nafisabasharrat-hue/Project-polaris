@@ -690,10 +690,7 @@ body{
         drop-shadow(0 0 16px rgba(255,255,255,.5));
 
     
-        animation-name: shooting;
-        animation-timing-function: linear;
-        animation-fill-mode: forwards;
-   
+      animation: shoot 2s linear forwards;
 }
 
 @keyframes shoot {
