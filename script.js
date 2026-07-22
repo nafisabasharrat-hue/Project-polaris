@@ -184,3 +184,29 @@ closeMemory.addEventListener("click", () => {
     memoryCard.classList.remove("active");
 
 });
+// ==========================================================
+// SHOOTING STARS
+// ==========================================================
+
+const shootingContainer = document.getElementById("shooting-star-container");
+
+function createShootingStar(){
+
+    const star = document.createElement("div");
+
+    star.className = "shooting-star";
+
+    star.style.top = Math.random() * 35 + "%";
+    star.style.left = (70 + Math.random() * 30) + "%";
+
+    shootingContainer.appendChild(star);
+
+    setTimeout(() => {
+
+        star.remove();
+
+    },1800);
+
+}
+
+setInterval(createShootingStar,15000);
