@@ -659,3 +659,60 @@ body{
     }
 
 }
+/* =====================================================
+   SHOOTING STARS
+===================================================== */
+
+.shooting-star{
+
+    position:absolute;
+
+    width:140px;
+    height:2px;
+
+    background:linear-gradient(
+        90deg,
+        rgba(255,255,255,1),
+        rgba(255,255,255,.6),
+        rgba(255,255,255,0)
+    );
+
+    border-radius:999px;
+
+    transform:rotate(-35deg);
+
+    opacity:0;
+
+    pointer-events:none;
+
+    filter:
+        drop-shadow(0 0 6px white)
+        drop-shadow(0 0 16px rgba(255,255,255,.5));
+
+    animation:shoot 1.8s linear forwards;
+
+}
+
+@keyframes shoot{
+
+    0%{
+
+        opacity:0;
+        transform:translate(0,0) rotate(-35deg);
+
+    }
+
+    10%{
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        opacity:0;
+        transform:translate(-520px,320px) rotate(-35deg);
+
+    }
+
+}
