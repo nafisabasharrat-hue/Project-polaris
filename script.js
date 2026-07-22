@@ -209,4 +209,15 @@ function createShootingStar(){
 
 }
 
-setInterval(createShootingStar,5000);
+function startMeteor(){
+
+    createShootingStar();
+
+    const next =
+        4000 + Math.random()*5000;
+
+    setTimeout(startMeteor,next);
+
+}
+
+startMeteor();
