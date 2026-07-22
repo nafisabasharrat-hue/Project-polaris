@@ -705,14 +705,16 @@ body{
     10%{
 
         opacity:1;
-
-    }
+ }     
 
     100%{
 
-        opacity:0;
-        transform:translate(-520px,320px) rotate(-35deg);
+    opacity:0;
 
-    }
+    transform:
+        translate(420px,420px)
+        rotate(-35deg);
+
+}
 
 }
