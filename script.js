@@ -197,7 +197,7 @@ function createShootingStar(){
     star.className = "shooting-star";
 
     star.style.top = Math.random() * 35 + "%";
-    star.style.left = (70 + Math.random() * 30) + "%";
+    star.style.left = "100%";
 
     shootingContainer.appendChild(star);
 
