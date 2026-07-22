@@ -196,6 +196,9 @@ function createShootingStar(){
 
     star.className = "shooting-star";
 
+    star.style.animationDuration =
+    (1.8 + Math.random() * 1.8) + "s";
+
     star.style.top = Math.random() * 35 + "%";
     star.style.left = "100%";
 
