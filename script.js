@@ -209,4 +209,4 @@ function createShootingStar(){
 
 }
 
-setInterval(createShootingStar,15000);
+setInterval(createShootingStar,5000);
