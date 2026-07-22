@@ -73,21 +73,21 @@ const memories = [
 },
 
 {
-    title:"Letters i never sent 💌",
+    title:"Lore 💬",
     image:"assets/photos/memory13.jpg",
-    text:"My journal is filled with letters about you, how i feel about you, how i view you"
+    text:"Name: kabab class:Professional ragebaiter. Special abilities:• Making me smile accidentally • Appearing at the worst possible timing • Looking suspiciously pretty Weaknesses: • Me. "
 },
 
 {
-    title:"Memory 14",
+    title:"You through my eyes 🪞",
     image:"assets/photos/memory14.jpg",
-    text:"Write your memory here."
+    text:"He is a very entertaining person to be around with a smile that sparks up the place. Spending time with him is comforting and adorable in its own way because i believe he doesn't notice it when he does the most cutest things that just keeps you hooked. With more understanding he's very mature with his feeling and control of emotions i think I've been inspired. He has a beautiful personality and it all just may seem like fancy talk but the words hold deeper meanings than they show. He is a man with a simple routine but quiet and peaceful enough. Major things he loves in life are sleep,tea,rain,shows and ramen."
 },
 
 {
-    title:"Memory 15",
+    title:"Polaris 🍀",
     image:"assets/photos/memory15.jpg",
-    text:"Write your memory here."
+    text:"You're not someone that opens up or shares what's troubling them that easily. I think you're very strong, stronger than i could ever be. The sole reason this website or as i call it polaris even exists is because you. With the single thought of making you smile or happy. I hope you can revisit this little galaxy of ours whenever you feel down. I know im not the best girlfriend im not as mature as you are and i truly admire you. I admire all the moments ive put in this, all the times I've realised that i keep falling more and more in love with you because everyday in one way or another you put a smile on my face and i hope i can do the same for you. I don't know where we would be in a year or two ahead of us but the past two years i didn't even know about your existence and look at us now. I just hope wherever we stand together we're happy. I hope i can provide you with the same comfort and love you've always given me. You're truly amazing and no matter how many times i say it i feel i don't appreciate it enough. And that is polaris for me."
 }
 
 ];
