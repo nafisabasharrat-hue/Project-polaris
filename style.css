@@ -693,27 +693,25 @@ body{
 
 }
 
-@keyframes shoot{
+@keyframes shooting {
 
-    0%{
-
+    from{
+        transform:translate(0,0);
         opacity:0;
-        transform:translate(0,0) rotate(-35deg);
-
     }
 
     10%{
-
         opacity:1;
- }     
+    }
 
-    100%{
+    90%{
+        opacity:1;
+    }
 
-    opacity:0;
-
-    transform:
-        translate(-500px,500px)
-        rotate(-35deg);
+    to{
+        transform:translate(-1800px,1800px);
+        opacity:0;
+    }
 
 }
 
