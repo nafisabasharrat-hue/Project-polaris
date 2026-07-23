@@ -185,39 +185,47 @@ closeMemory.addEventListener("click", () => {
 
 });
 // ==========================================================
-// SHOOTING STARS
+// WANDERING METEORS
 // ==========================================================
 
-const shootingContainer = document.getElementById("shooting-star-container");
+const shootingContainer =
+document.getElementById("shooting-star-container");
 
-function createShootingStar(){
+function createMeteor(){
 
-    const star = document.createElement("div");
+    const meteor =
+    document.createElement("div");
 
-    star.className = "shooting-star";
+    meteor.className="shooting-star";
 
-    star.style.top = Math.random() * 35 + "%";
-    star.style.left = "110%";
+    meteor.style.left="110%";
 
-    shootingContainer.appendChild(star);
+    meteor.style.top=
+        (Math.random()*30)+"%";
 
-    setTimeout(() => {
+    meteor.style.animationDuration=
+        (2+Math.random()*1.5)+"s";
 
-        star.remove();
+    shootingContainer.appendChild(meteor);
 
-    },1800);
+    setTimeout(()=>{
 
-}
+        meteor.remove();
 
-function startMeteor(){
-
-    createShootingStar();
-
-    const next =
-        4000 + Math.random()*5000;
-
-    setTimeout(startMeteor,next);
+    },4000);
 
 }
 
-startMeteor();
+function meteorLoop(){
+
+    createMeteor();
+
+    const next=
+        4000+
+        Math.random()*7000;
+
+    setTimeout(meteorLoop,next);
+
+}
+
+meteorLoop();
