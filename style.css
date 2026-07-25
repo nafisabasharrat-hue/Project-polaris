@@ -662,26 +662,34 @@ body{
 
 /* =====================================================
    WANDERING METEORS
-===================================================== */
-
+=======================================================*/
 .shooting-star{
 
     position:absolute;
 
-    width:6px;
-    height:6px;
-
-    border-radius:50%;
-
-    background:white;
-
-    box-shadow:
-        0 0 8px rgba(255,255,255,.9),
-        0 0 18px rgba(255,255,255,.5);
+    width:260px;
+    height:2px;
 
     pointer-events:none;
 
-    animation:meteor linear forwards;
+    opacity:0;
+
+    border-radius:999px;
+
+    background:linear-gradient(
+        to left,
+        rgba(255,255,255,.55),
+        rgba(255,255,255,.18),
+        rgba(255,255,255,.05),
+        transparent
+    );
+
+    filter:
+        blur(.8px)
+        drop-shadow(0 0 8px rgba(255,255,255,.45));
+
+    animation:meteor 2.8s linear forwards;
+
 }
 
 .shooting-star::before{
