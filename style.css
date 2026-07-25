@@ -691,3 +691,35 @@ body{
     animation:meteor 2.8s linear forwards;
 
 }
+
+@keyframes meteor{
+
+    0%{
+
+        opacity:0;
+
+        transform:
+            translate3d(0,0,0)
+            rotate(-35deg)
+            scaleX(.9);
+
+    }
+
+    8%{
+
+        opacity:.95;
+
+    }
+
+    100%{
+
+        opacity:0;
+
+        transform:
+            translate3d(-2400px,1800px,0)
+            rotate(-35deg)
+            scaleX(1);
+
+    }
+
+}
