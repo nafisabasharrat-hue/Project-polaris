@@ -690,7 +690,7 @@ body{
 
     position:absolute;
 
-    right:2px;
+    left:2px;
     top:50%;
 
     width:220px;
@@ -700,48 +700,12 @@ body{
         translateY(-50%);
 
     background:linear-gradient(
-        to left,
-        rgba(255,255,255,.15),
+        to right,
+        rgba(255,255,255,.18),
         rgba(255,255,255,.08),
         transparent
     );
 
     filter:blur(1px);
-
-}
-
-@keyframes meteor{
-
-    from{
-
-        transform:
-            translate(0,0)
-            rotate(-35deg);
-
-        opacity:0;
-
-    }
-
-    10%{
-
-        opacity:1;
-
-    }
-
-    90%{
-
-        opacity:1;
-
-    }
-
-    to{
-
-        transform:
-            translate(-2200px,2200px)
-            rotate(-35deg);
-
-        opacity:0;
-
-    }
 
 }
