@@ -198,6 +198,9 @@ function createMeteor(){
 
     meteor.className="shooting-star";
 
+    meteor.style.width =
+    (180 + Math.random()*140) + "px";
+
     meteor.style.left="110%";
 
     meteor.style.top=
