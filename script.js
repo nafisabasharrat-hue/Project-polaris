@@ -245,3 +245,30 @@ function meteorLoop(){
 }
 
 meteorLoop();
+
+// ==========================================================
+// MUSIC FADE IN
+// ==========================================================
+
+function fadeMusic(){
+
+    let volume = 0;
+
+    const fade = setInterval(() => {
+
+        volume += 0.02;
+
+        if(volume >= 0.35){
+
+            volume = 0.35;
+
+            clearInterval(fade);
+
+        }
+
+        music.volume = volume;
+
+    },100);
+
+}
+
