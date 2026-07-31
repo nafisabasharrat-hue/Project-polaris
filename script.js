@@ -8,6 +8,7 @@ const loadingPercent = document.getElementById("loading-percent");
 const loadingScreen = document.getElementById("loading-screen");
 const introLines = document.querySelectorAll(".intro-line");
 const enterButton = document.getElementById("enter-btn");
+const music = document.getElementById("background-music");
 
 let progress = 0;
 
