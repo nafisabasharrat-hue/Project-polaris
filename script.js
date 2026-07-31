@@ -130,12 +130,24 @@ for(let i=0;i<30;i++){
     starContainer.appendChild(star);
 
 }
-
 enterButton.addEventListener("click", () => {
 
     document.getElementById("intro-screen").style.display = "none";
 
     document.getElementById("universe").classList.remove("hidden");
+
+    music.volume = 0;
+    music.currentTime = 0;
+
+    setTimeout(() => {
+
+        music.play().catch(console.error);
+
+        fadeMusic();
+
+    },2000);
+
+});
 
 });
 
