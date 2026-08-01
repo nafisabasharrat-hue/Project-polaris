@@ -141,7 +141,9 @@ enterButton.addEventListener("click", () => {
 
     setTimeout(() => {
 
-        music.play().catch(console.error);
+        music.play()
+.then(() => alert("Music started"))
+.catch(err => alert(err.name + ": " + err.message));
 
         fadeMusic();
 
