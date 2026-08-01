@@ -1,3 +1,4 @@
+alert("SCRIPT LOADED");
 // ==========================================================
 // PROJECT POLARIS
 // Version 0.3 - Awakening
