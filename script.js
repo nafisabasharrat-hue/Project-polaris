@@ -133,21 +133,13 @@ for(let i=0;i<30;i++){
 enterButton.addEventListener("click", () => {
 
     document.getElementById("intro-screen").style.display = "none";
-
     document.getElementById("universe").classList.remove("hidden");
 
-    music.volume = 0;
-    music.currentTime = 0;
+    alert("Begin clicked");
 
-    setTimeout(() => {
-
-        music.play()
-.then(() => alert("Music started"))
-.catch(err => alert(err.name + ": " + err.message));
-
-        fadeMusic();
-
-    },2000);
+    music.play()
+        .then(() => alert("Music started"))
+        .catch(err => alert(err.message));
 
 });
 
