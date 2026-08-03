@@ -91,3 +91,32 @@ const memories = [
 }
 
 ];
+const memories = [
+    ...
+];
+
+const ending = {
+
+    title: "The Constellation",
+
+    line1: "...",
+
+    line2: "...",
+
+    line3: "...",
+
+    line4: "...",
+
+    signature: "— Atoshee"
+
+};
+
+const constellation = {
+
+    zodiac: "Capricorn",
+
+    revealSpeed: 1200,
+
+    pauseBetweenLines: 1800
+
+};
