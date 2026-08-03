@@ -308,3 +308,4 @@ function showConstellation(){
     });
 
 }
+setTimeout(showConstellation,3000);
