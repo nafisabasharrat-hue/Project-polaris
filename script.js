@@ -284,3 +284,27 @@ const capricornStars = [
 
 ];
 
+function showConstellation(){
+
+    constellationContainer.innerHTML = "";
+
+    capricornStars.forEach((star,index)=>{
+
+        const s=document.createElement("div");
+
+        s.className="constellation-star";
+
+        s.style.left=star.x+"%";
+        s.style.top=star.y+"%";
+
+        constellationContainer.appendChild(s);
+
+        setTimeout(()=>{
+
+            s.classList.add("show");
+
+        },index*500);
+
+    });
+
+}
