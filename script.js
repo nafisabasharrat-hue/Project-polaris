@@ -162,35 +162,35 @@ stars.forEach((star, index) => {
 
     star.addEventListener("click", () => {
 
-    const memory = memories[index];
+        const memory = memories[index];
 
-    memoryTitle.textContent = memory.title;
-    memoryText.textContent = memory.text;
-    memoryPhoto.src = memory.image;
+        memoryTitle.textContent = memory.title;
+        memoryText.textContent = memory.text;
+        memoryPhoto.src = memory.image;
 
-    if (!star.classList.contains("discovered")) {
+        if (!star.classList.contains("discovered")) {
 
-        star.classList.add("discovered");
+            star.classList.add("discovered");
 
-        discoveredStars++;
+            discoveredStars++;
 
-        counter.textContent =
-            `${discoveredStars} / 15 Stars Discovered`;
+            counter.textContent =
+                `${discoveredStars} / 15 Stars Discovered`;
 
-    }
+        }
 
-    memoryCard.classList.add("active");
+        memoryCard.classList.add("active");
 
-} catch (error) {
+    });
 
-    alert(error.message);
+});
 
-}
 closeMemory.addEventListener("click", () => {
 
     memoryCard.classList.remove("active");
 
 });
+
 // ==========================================================
 // WANDERING METEORS
 // ==========================================================
