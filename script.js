@@ -1,267 +1,649 @@
-// ==========================================================
-// PROJECT POLARIS
-// Version 0.3 - Awakening
-// ==========================================================
+/* ==========================================================
+   PROJECT POLARIS
+   Version 1.0
+   Complete JavaScript Rewrite
+========================================================== */
 
+"use strict";
+
+/* ==========================================================
+   ELEMENT REFERENCES
+========================================================== */
+
+const loadingScreen = document.getElementById("loading-screen");
 const progressBar = document.getElementById("progress-bar");
 const loadingPercent = document.getElementById("loading-percent");
-const loadingScreen = document.getElementById("loading-screen");
+
+const introScreen = document.getElementById("intro-screen");
 const introLines = document.querySelectorAll(".intro-line");
 const enterButton = document.getElementById("enter-btn");
+
+const universe = document.getElementById("universe");
+
+const backgroundStars = document.getElementById("background-stars");
+const particleLayer = document.getElementById("particle-layer");
+const shootingContainer = document.getElementById("shooting-star-container");
+
+const moon = document.getElementById("moon");
+
+const musicButton = document.getElementById("music-toggle");
 const music = document.getElementById("background-music");
 
-let progress = 0;
-
-const loadingAnimation = setInterval(() => {
-
-    progress += 1;
-
-    progressBar.style.width = progress + "%";
-    loadingPercent.textContent = progress + "%";
-    if (progress >= 100) {
-
-        clearInterval(loadingAnimation);
-
-        setTimeout(() => {
-
-            loadingScreen.style.opacity = "0";
-
-            setTimeout(() => {
-
-                loadingScreen.style.display = "none";
-                
-                document.getElementById("intro-screen").classList.remove("hidden");
-                
-                showIntro();
-
-            }, 1500);
-
-        }, 400);
-
-    }
-
-}, 35);
-
-
-function showIntro() {
-
-    introLines.forEach((line, index) => {
-
-        setTimeout(() => {
-
-            line.style.opacity = "1";
-
-            line.style.transform = "translateY(0)";
-
-            line.style.transition =
-                "opacity 1.6s ease, transform 1.6s ease";
-
-        }, index * 1800);
-
-    }); 
-
-    setTimeout(() => {
-
-        enterButton.style.opacity = "1"; 
-        
-        enterButton.style.transform = "translateY(0)";
-
-    }, introLines.length * 1800 + 500);
-
-}
-
-// ==========================================================
-// BACKGROUND STARS
-// ==========================================================
-
-const starContainer = document.getElementById("background-stars");
-
-const SAFE_ZONE = {
-
-    left:25,
-
-    right:75,
-
-    top:18,
-
-    bottom:72
-
-};
-
-for(let i=0;i<30;i++){
-
-    const star=document.createElement("div");
-
-    star.className="bg-star";
-
-    let x;
-    let y;
-
-    do{
-
-        x=Math.random()*100;
-        y=Math.random()*100;
-
-    }
-
-    while(
-
-        x>SAFE_ZONE.left &&
-        x<SAFE_ZONE.right &&
-        y>SAFE_ZONE.top &&
-        y<SAFE_ZONE.bottom
-
-    );
-
-    star.style.left=x+"%";
-    star.style.top=y+"%";
-
-    star.style.opacity=(0.2+Math.random()*0.6);
-
-    star.style.animationDelay=
-        (Math.random()*5)+"s";
-
-    star.style.width=
-        (1+Math.random()*2)+"px";
-
-    star.style.height=
-        star.style.width;
-
-    starContainer.appendChild(star);
-
-}
-enterButton.addEventListener("click", () => {
-
-    document.getElementById("intro-screen").style.display = "none";
-    document.getElementById("universe").classList.remove("hidden");
-
-    alert("Begin clicked");
-
-    music.play()
-        .then(() => alert("Music started"))
-        .catch(err => alert(err.message));
-
-});
-
-// ==========================================================
-// FIRST MEMORY
-// ==========================================================
+const memoryCounter = document.getElementById("memory-counter");
 
 const memoryCard = document.getElementById("memory-card");
+const closeMemory = document.getElementById("close-memory");
+
+const memoryPhoto = document.getElementById("memory-photo");
 const memoryTitle = document.getElementById("memory-title");
 const memoryText = document.getElementById("memory-text");
-const memoryPhoto = document.getElementById("memory-photo");
-const closeMemory = document.getElementById("close-memory");
-const counter = document.getElementById("memory-counter");
 
-const stars = document.querySelectorAll(".memory-star");
+const constellationContainer = document.getElementById("constellation-container");
 
-let discoveredStars = 0;
+const endingScreen = document.getElementById("ending-screen");
 
-stars.forEach((star, index) => {
+/* ==========================================================
+   MEMORY STAR REFERENCES
+========================================================== */
 
-    star.addEventListener("click", () => {
+const memoryStars = [];
 
-        const memory = memories[index];
+for (let i = 1; i <= memories.length; i++) {
 
-        memoryTitle.textContent = memory.title;
-        memoryText.textContent = memory.text;
-        memoryPhoto.src = memory.image;
+    const star = document.getElementById(`memory-star-${i}`);
 
-        if (!star.classList.contains("discovered")) {
+    if (star) {
 
-            star.classList.add("discovered");
+        memoryStars.push(star);
 
-            discoveredStars++;
+    }
 
-            counter.textContent =
-                `${discoveredStars} / 15 Stars Discovered`;
+}
 
-        }
+/* ==========================================================
+   APP STATE
+========================================================== */
 
-        memoryCard.classList.add("active");
+const discovered = new Set();
+
+let musicStarted = false;
+
+let shootingInterval = null;
+
+/* ==========================================================
+   SMALL HELPERS
+========================================================== */
+
+function wait(ms) {
+
+    return new Promise(resolve => setTimeout(resolve, ms));
+
+}
+
+function fadeIn(element, display = "block") {
+
+    element.classList.remove("hidden");
+
+    element.style.display = display;
+
+    element.style.opacity = 0;
+
+    requestAnimationFrame(() => {
+
+        element.style.transition = "opacity 1s ease";
+
+        element.style.opacity = 1;
 
     });
 
-});
+}
 
-closeMemory.addEventListener("click", () => {
+function fadeOut(element) {
+
+    return new Promise(resolve => {
+
+        element.style.transition = "opacity 1s ease";
+
+        element.style.opacity = 0;
+
+        setTimeout(() => {
+
+            element.classList.add("hidden");
+
+            resolve();
+
+        }, 1000);
+
+    });
+
+}
+
+/* ==========================================================
+   LOADING SCREEN
+========================================================== */
+
+async function playLoadingScreen() {
+
+    let progress = 0;
+
+    while (progress <= 100) {
+
+        progressBar.style.width = progress + "%";
+
+        loadingPercent.textContent = progress + "%";
+
+        await wait(18);
+
+        progress++;
+
+    }
+
+    await wait(500);
+
+    await fadeOut(loadingScreen);
+
+    introScreen.classList.remove("hidden");
+
+}
+
+/* ==========================================================
+   INTRO SEQUENCE
+========================================================== */
+
+async function playIntroSequence() {
+
+    for (const line of introLines) {
+
+        await wait(700);
+
+        line.style.transition =
+            "opacity 1.2s ease, transform 1.2s ease";
+
+        line.style.opacity = 1;
+
+        line.style.transform = "translateY(0)";
+
+    }
+
+    await wait(700);
+
+    enterButton.style.transition =
+        "opacity 1s ease, transform 1s ease";
+
+    enterButton.style.opacity = 1;
+
+    enterButton.style.transform = "translateY(0)";
+
+}
+
+/* ==========================================================
+   ENTER THE SKY
+========================================================== */
+
+async function enterUniverse() {
+
+    enterButton.disabled = true;
+
+    await fadeOut(introScreen);
+
+    universe.classList.remove("hidden");
+
+    generateBackgroundStars();
+
+    startMoonAnimation();
+
+    revealMemoryStars();
+
+    startShootingStars();
+
+}
+
+/* ==========================================================
+   BACKGROUND STARS
+========================================================== */
+
+function generateBackgroundStars() {
+
+    backgroundStars.innerHTML = "";
+
+    for (let i = 0; i < 250; i++) {
+
+        const star = document.createElement("div");
+
+        star.className = "bg-star";
+
+        star.style.left = Math.random() * 100 + "%";
+
+        star.style.top = Math.random() * 100 + "%";
+
+        const size = Math.random() * 2 + 1;
+
+        star.style.width = size + "px";
+
+        star.style.height = size + "px";
+
+        star.style.animationDelay =
+            Math.random() * 6 + "s";
+
+        backgroundStars.appendChild(star);
+
+    }
+
+}
+
+/* ==========================================================
+   MOON
+========================================================== */
+
+function startMoonAnimation() {
+
+    moon.style.animation =
+        "moonGlow 6s ease-in-out infinite";
+
+}
+
+/* ==========================================================
+   MEMORY STAR REVEAL
+========================================================== */
+
+async function revealMemoryStars() {
+
+    for (const star of memoryStars) {
+
+        star.style.opacity = 0;
+
+        star.style.transform = "scale(.4)";
+
+    }
+
+    await wait(500);
+
+    for (const star of memoryStars) {
+
+        star.style.transition =
+            "opacity .8s ease, transform .8s ease";
+
+        star.style.opacity = 1;
+
+        star.style.transform = "scale(1)";
+
+        await wait(300);
+
+    }
+
+}
+/* ==========================================================
+   MEMORY SYSTEM
+========================================================== */
+
+function initialiseMemoryStars() {
+
+    memoryStars.forEach((star, index) => {
+
+        star.addEventListener("click", () => {
+
+            openMemory(index);
+
+        });
+
+    });
+
+}
+
+/* ==========================================================
+   OPEN MEMORY
+========================================================== */
+
+function openMemory(index) {
+
+    const memory = memories[index];
+
+    if (!memory) return;
+
+    memoryPhoto.style.opacity = 0;
+
+    memoryPhoto.style.transform = "scale(.95)";
+
+    memoryTitle.textContent = memory.title;
+
+    memoryText.textContent = memory.text;
+
+    memoryPhoto.onload = () => {
+
+        memoryPhoto.style.opacity = 1;
+
+        memoryPhoto.style.transform = "scale(1)";
+
+    };
+
+    memoryPhoto.src = memory.image;
+
+    memoryCard.classList.add("active");
+
+    markDiscovered(index);
+
+}
+
+/* ==========================================================
+   CLOSE MEMORY
+========================================================== */
+
+function closeMemoryCard() {
 
     memoryCard.classList.remove("active");
 
+}
+
+closeMemory.addEventListener("click", closeMemoryCard);
+
+memoryCard.addEventListener("click", (event) => {
+
+    if (event.target === memoryCard) {
+
+        closeMemoryCard();
+
+    }
+
 });
 
-// ==========================================================
-// WANDERING METEORS
-// ==========================================================
+document.addEventListener("keydown", (event) => {
 
-const shootingContainer =
-document.getElementById("shooting-star-container");
+    if (event.key === "Escape") {
 
-function createMeteor(){
+        closeMemoryCard();
 
-    const meteor =
-    document.createElement("div");
+    }
 
-    meteor.className="shooting-star";
+});
 
-    meteor.style.width =
-    (180 + Math.random()*140) + "px";
+/* ==========================================================
+   DISCOVERY SYSTEM
+========================================================== */
 
-    meteor.style.left="110%";
+function markDiscovered(index) {
 
-    meteor.style.top=
-        (Math.random()*30)+"%";
+    if (discovered.has(index)) return;
 
-    meteor.style.animationDuration=
-        (2+Math.random()*1.5)+"s";
+    discovered.add(index);
 
-    shootingContainer.appendChild(meteor);
+    const star = memoryStars[index];
 
-    setTimeout(()=>{
+    if (star) {
 
-        meteor.remove();
+        star.classList.add("discovered");
 
-    },4000);
+    }
 
-}
+    updateCounter();
 
-function meteorLoop(){
+    if (discovered.size === memories.length) {
 
-    createMeteor();
+        setTimeout(() => {
 
-    const next=
-        4000+
-        Math.random()*7000;
+            beginConstellationSequence();
 
-    setTimeout(meteorLoop,next);
+        }, 1200);
+
+    }
 
 }
 
-meteorLoop();
+/* ==========================================================
+   COUNTER
+========================================================== */
 
-// ==========================================================
-// MUSIC FADE IN
-// ==========================================================
+function updateCounter() {
 
-function fadeMusic(){
+    memoryCounter.textContent =
+        `${discovered.size} / ${memories.length} Stars Discovered`;
 
-    let volume = 0;
+}
 
-    const fade = setInterval(() => {
+/* ==========================================================
+   MUSIC
+========================================================== */
 
-        volume += 0.02;
+musicButton.addEventListener("click", () => {
 
-        if(volume >= 0.35){
+    if (!musicStarted) {
 
-            volume = 0.35;
+        music.play();
 
-            clearInterval(fade);
+        musicStarted = true;
+
+        musicButton.textContent = "❚❚";
+
+        return;
+
+    }
+
+    if (music.paused) {
+
+        music.play();
+
+        musicButton.textContent = "❚❚";
+
+    }
+
+    else {
+
+        music.pause();
+
+        musicButton.textContent = "♫";
+
+    }
+
+});
+
+/* ==========================================================
+   AUTOPLAY AFTER BEGIN
+========================================================== */
+
+enterButton.addEventListener("click", async () => {
+
+    if (!musicStarted) {
+
+        try {
+
+            await music.play();
+
+            musicStarted = true;
+
+            musicButton.textContent = "❚❚";
 
         }
 
-        music.volume = volume;
+        catch (error) {
 
-    },100);
+            // Browser blocked autoplay.
+            // User can start it manually.
+
+        }
+
+    }
+
+});
+
+/* ==========================================================
+   SHOOTING STARS
+========================================================== */
+
+function createShootingStar() {
+
+    const meteor = document.createElement("div");
+
+    meteor.className = "shooting-star";
+
+    meteor.style.top = Math.random() * 40 + "%";
+
+    meteor.style.left = 100 + Math.random() * 20 + "%";
+
+    meteor.style.animationDuration =
+        (2 + Math.random()) + "s";
+
+    shootingContainer.appendChild(meteor);
+
+    meteor.addEventListener("animationend", () => {
+
+        meteor.remove();
+
+    });
 
 }
+
+function startShootingStars() {
+
+    if (shootingInterval) {
+
+        clearInterval(shootingInterval);
+
+    }
+
+    shootingInterval = setInterval(() => {
+
+        createShootingStar();
+
+    }, 5000);
+
+}
+/* ==========================================================
+   CONSTELLATION SEQUENCE
+========================================================== */
+
+const constellationPattern = [
+
+    { x: 18, y: 70 },
+    { x: 28, y: 58 },
+    { x: 38, y: 52 },
+    { x: 48, y: 40 },
+    { x: 58, y: 34 },
+    { x: 68, y: 28 },
+    { x: 76, y: 18 }
+
+];
+
+async function beginConstellationSequence() {
+
+    if (beginConstellationSequence.started) return;
+
+    beginConstellationSequence.started = true;
+
+    constellationContainer.innerHTML = "";
+
+    const stars = [];
+
+    for (const point of constellationPattern) {
+
+        const star = document.createElement("div");
+
+        star.className = "constellation-star";
+
+        star.style.left = point.x + "%";
+        star.style.top = point.y + "%";
+
+        constellationContainer.appendChild(star);
+
+        stars.push(star);
+
+    }
+
+    for (let i = 0; i < stars.length; i++) {
+
+        stars[i].classList.add("show");
+
+        if (i > 0) {
+
+            drawConstellationLine(
+                constellationPattern[i - 1],
+                constellationPattern[i]
+            );
+
+        }
+
+        await wait(constellation.revealSpeed);
+
+    }
+
+    await wait(3000);
+
+    showEndingScreen();
+
+}
+
+/* ==========================================================
+   DRAW CONSTELLATION LINE
+========================================================== */
+
+function drawConstellationLine(start, end) {
+
+    const line = document.createElement("div");
+
+    line.className = "constellation-line";
+
+    const dx = end.x - start.x;
+    const dy = end.y - start.y;
+
+    const length = Math.sqrt(dx * dx + dy * dy);
+
+    const angle = Math.atan2(dy, dx) * 180 / Math.PI;
+
+    line.style.left = start.x + "%";
+    line.style.top = start.y + "%";
+
+    line.style.width = length + "%";
+
+    line.style.transform =
+        `rotate(${angle}deg) scaleX(0)`;
+
+    constellationContainer.appendChild(line);
+
+    requestAnimationFrame(() => {
+
+        line.classList.add("show");
+
+    });
+
+}
+
+/* ==========================================================
+   ENDING
+========================================================== */
+
+async function showEndingScreen() {
+
+    await fadeOut(universe);
+
+    endingScreen.classList.remove("hidden");
+
+    endingScreen.style.opacity = 0;
+
+    requestAnimationFrame(() => {
+
+        endingScreen.style.transition =
+            "opacity 2s ease";
+
+        endingScreen.style.opacity = 1;
+
+    });
+
+}
+
+/* ==========================================================
+   INITIALISATION
+========================================================== */
+
+async function initialise() {
+
+    updateCounter();
+
+    initialiseMemoryStars();
+
+    await playLoadingScreen();
+
+    await playIntroSequence();
+
+}
+
+enterButton.addEventListener("click", enterUniverse);
+
+window.addEventListener("load", initialise);
