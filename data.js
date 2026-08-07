@@ -89,6 +89,7 @@ const memories = [
     image:"assets/photos/memory15.jpg",
     text:"You're not someone that opens up or shares what's troubling them that easily. I think you're very strong, stronger than i could ever be. The sole reason this website or as i call it polaris even exists is because you. With the single thought of making you smile or happy. I hope you can revisit this little galaxy of ours whenever you feel down. I know im not the best girlfriend im not as mature as you are and i truly admire you. I admire all the moments ive put in this, all the times I've realised that i keep falling more and more in love with you because everyday in one way or another you put a smile on my face and i hope i can do the same for you. I don't know where we would be in a year or two ahead of us but the past two years i didn't even know about your existence and look at us now. I just hope wherever we stand together we're happy. I hope i can provide you with the same comfort and love you've always given me. You're truly amazing and no matter how many times i say it i feel i don't appreciate it enough. And that is polaris for me."
 }
+];
     
 const ending = {
 
