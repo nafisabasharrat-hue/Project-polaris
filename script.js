@@ -641,25 +641,6 @@ async function initialise() {
     initialiseMemoryStars();
 
     await playLoadingScreen();
-
-    await playIntroSequence();
-
-}
-enterButton.addEventListener("click", async () => {
-    if (!musicStarted) {
-        try {
-            await music.play();
-            musicStarted = true;
-            musicButton.textContent = "❚❚";
-        } catch (error) {
-            // Browser blocked autoplay.
-            // User can start it manually.
-        }
-    }
-});
-
-function createShootingStar() {
-    // ...
 }
 
 enterButton.addEventListener("click", enterUniverse);
