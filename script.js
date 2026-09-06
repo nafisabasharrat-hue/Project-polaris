@@ -645,7 +645,35 @@ async function initialise() {
     await playIntroSequence();
 
 }
+enterButton.addEventListener("click", function () {
 
-enterButton.addEventListener("click", enterUniverse);
+    console.log("POLARIS: BEGIN CLICKED");
 
-window.addEventListener("load", initialise);
+    enterButton.textContent = "Opening...";
+
+    introScreen.classList.add("hidden");
+
+    universe.classList.remove("hidden");
+
+    universe.style.display = "block";
+    universe.style.opacity = "1";
+    universe.style.visibility = "visible";
+    universe.style.zIndex = "1";
+
+    generateBackgroundStars();
+    startMoonAnimation();
+    revealMemoryStars();
+    startShootingStars();
+
+    // Start music after the user's click
+    music.play()
+        .then(() => {
+            musicStarted = true;
+            musicButton.textContent = "❚❚";
+        })
+        .catch(() => {
+            console.log("POLARIS: Music autoplay blocked");
+        });
+
+});
+
