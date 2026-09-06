@@ -184,9 +184,11 @@ async function enterUniverse() {
 
     enterButton.disabled = true;
 
-    await fadeOut(introScreen);
+    introScreen.classList.add("hidden");
 
     universe.classList.remove("hidden");
+    universe.style.display = "block";
+    universe.style.opacity = "1";
 
     generateBackgroundStars();
 
