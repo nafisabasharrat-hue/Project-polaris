@@ -140,10 +140,13 @@ async function playLoadingScreen() {
 
     await wait(500);
 
-    await fadeOut(loadingScreen);
+   
+await fadeOut(loadingScreen);
 
-    introScreen.classList.remove("hidden");
-
+introScreen.classList.remove("hidden");
+introScreen.style.display = "flex";
+introScreen.style.opacity = "1";
+   
 }
 
 /* ==========================================================
