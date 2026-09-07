@@ -155,18 +155,22 @@ introScreen.style.opacity = "1";
 
 async function playIntroSequence() {
 
-    for (const line of introLines) {
+    introScreen.classList.remove("hidden");
+    introScreen.style.display = "flex";
+    introScreen.style.opacity = "1";
+    introScreen.style.visibility = "visible";
 
-        await wait(700);
-
-        line.style.transition =
-            "opacity 1.2s ease, transform 1.2s ease";
-
-        line.style.opacity = 1;
-
+    introLines.forEach(line => {
+        line.style.opacity = "1";
         line.style.transform = "translateY(0)";
+        line.style.visibility = "visible";
+    });
 
-    }
+    enterButton.style.opacity = "1";
+    enterButton.style.transform = "translateY(0)";
+    enterButton.style.visibility = "visible";
+
+}
 
     await wait(700);
 
