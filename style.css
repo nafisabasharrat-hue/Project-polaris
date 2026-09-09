@@ -199,13 +199,11 @@ a{
 
 
 #intro-screen{
-
     position:fixed;
     inset:0;
+    z-index:5;
 
-    z-index:9000;
-
-    display:flex !important;
+    display:flex;
 
     justify-content:center;
     align-items:flex-start;
@@ -214,11 +212,9 @@ a{
 
     text-align:center;
 
+    z-index:9000;
+
     background:transparent;
-
-    opacity:1 !important;
-    visibility:visible !important;
-
 }
 
 .intro-content{
@@ -236,22 +232,16 @@ a{
 }
 
 .intro-line{
-
     font-family:"Cormorant Garamond",serif;
     font-weight:400;
     font-size:clamp(2rem,5vw,3.6rem);
     color:rgba(247,248,250,.95);
 
-    opacity:1 !important;
-    transform:translateY(0) !important;
-
+    opacity:0;
+    transform:translateY(20px);
 }
 
 #enter-btn{
-
-   opacity:1 !important;
-transform:translateY(0) !important;
-visibility:visible !important;
 
     margin-top:20px;
 
