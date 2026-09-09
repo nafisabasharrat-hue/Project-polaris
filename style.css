@@ -238,16 +238,12 @@ a{
 .intro-line{
 
     font-family:"Cormorant Garamond",serif;
-
     font-weight:400;
-
     font-size:clamp(2rem,5vw,3.6rem);
-
     color:rgba(247,248,250,.95);
 
-    opacity:0;
-
-    transform:translateY(20px);
+    opacity:1 !important;
+    transform:translateY(0) !important;
 
 }
 
