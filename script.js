@@ -210,7 +210,7 @@ function generateBackgroundStars() {
 
     backgroundStars.innerHTML = "";
 
-    for (let i = 0; i < 250; i++) {
+    for (let i = 0; i < 90; i++) {
 
         const star = document.createElement("div");
 
