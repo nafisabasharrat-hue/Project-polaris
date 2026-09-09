@@ -784,3 +784,90 @@ body{
     transform:scaleX(1);
 
 }
+/* ==========================================================
+   ANNIVERSARY LETTER
+========================================================== */
+
+#ending-screen{
+    position:fixed;
+    inset:0;
+    z-index:20000;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:30px;
+
+    text-align:center;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(26,45,90,.45),
+            transparent 60%
+        ),
+        linear-gradient(
+            180deg,
+            #0C1633 0%,
+            #050816 70%,
+            #02040B 100%
+        );
+
+    color:white;
+}
+
+#ending-screen.hidden{
+    display:none;
+}
+
+.ending-content{
+    width:min(650px,90%);
+    max-height:85vh;
+    overflow-y:auto;
+
+    padding:45px 30px;
+
+    border:1px solid rgba(255,255,255,.12);
+    border-radius:28px;
+
+    background:rgba(255,255,255,.045);
+    backdrop-filter:blur(12px);
+
+    box-shadow:
+        0 20px 70px rgba(0,0,0,.4);
+}
+
+.ending-content h1{
+    margin-bottom:28px;
+
+    font-family:"Parisienne",cursive;
+    font-size:clamp(2.4rem,7vw,4rem);
+    font-weight:400;
+
+    color:rgba(255,255,255,.95);
+
+    text-shadow:
+        0 0 20px rgba(255,255,255,.2);
+}
+
+#ending-message{
+    white-space:pre-line;
+
+    font-family:"Inter",sans-serif;
+    font-size:clamp(.95rem,2.5vw,1.1rem);
+    line-height:2;
+
+    font-weight:300;
+
+    color:rgba(247,248,250,.82);
+}
+
+.ending-signature{
+    margin-top:30px;
+
+    font-family:"Parisienne",cursive;
+    font-size:2rem;
+
+    color:rgba(255,255,255,.9);
+}
