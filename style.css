@@ -375,13 +375,13 @@ body{
 @keyframes twinkle{
 
     0%,100%{
-        opacity:.2;
+        opacity:.08;
         transform:scale(1);
     }
 
     50%{
-        opacity:.9;
-        transform:scale(1.4);
+        opacity:.45;
+        transform:scale(1.25);
     }
 
 }
