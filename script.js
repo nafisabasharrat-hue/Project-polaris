@@ -18,6 +18,9 @@ const introScreen = document.getElementById("intro-screen");
 const introLines = document.querySelectorAll(".intro-line");
 const enterButton = document.getElementById("enter-btn");
 
+enterButton.style.opacity = "0";
+enterButton.style.visibility = "hidden";
+
 const universe = document.getElementById("universe");
 
 const backgroundStars = document.getElementById("background-stars");
@@ -168,15 +171,12 @@ async function playIntroSequence() {
 
     }
 
-    await wait(700);
-
     enterButton.style.transition =
-        "opacity 1s ease, transform 1s ease";
+    "opacity 1s ease, transform 1s ease";
 
-    enterButton.style.opacity = 1;
-
-    enterButton.style.transform = "translateY(0)";
-
+enterButton.style.visibility = "visible";
+enterButton.style.opacity = 1;
+enterButton.style.transform = "translateY(0)";
 }
 /* ==========================================================
    ENTER THE SKY
