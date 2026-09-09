@@ -380,15 +380,15 @@ function markDiscovered(index) {
 
     updateCounter();
 
-    if (discovered.size === memories.length) {
+   if (discovered.size === memories.length) {
 
-        setTimeout(() => {
+    setTimeout(() => {
 
-            beginConstellationSequence();
+        showEndingScreen();
 
-        }, 1200);
+    }, 1200);
 
-    }
+}
 
 }
 
