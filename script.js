@@ -386,7 +386,7 @@ function markDiscovered(index) {
 
         showEndingScreen();
 
-    }, 1200);
+    }, 25000);
 
 }
 
