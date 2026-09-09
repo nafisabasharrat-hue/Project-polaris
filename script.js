@@ -643,6 +643,9 @@ async function initialise() {
     initialiseMemoryStars();
 
     await playLoadingScreen();
+
+    await playIntroSequence();
+
 }
 
 enterButton.addEventListener("click", enterUniverse);
