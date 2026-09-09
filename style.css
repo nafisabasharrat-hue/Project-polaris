@@ -385,33 +385,37 @@ body{
     }
 
 }
+@keyframes memoryTwinkle{
+    0%,100%{
+        opacity:.85;
+        transform:scale(1);
+    }
+
+    50%{
+        opacity:1;
+        transform:scale(1.15);
+    }
+}
 
 /* =====================================================
    MEMORY STAR
 ===================================================== */
- .memory-star{
-
+.memory-star{
     position:absolute;
-
     width:26px;
     height:26px;
-    
     z-index:9999;
-    
     background-image:url("assets/stars/star-optimized.webp");
     background-size:contain;
     background-repeat:no-repeat;
     background-position:center;
-
     background-color:transparent;
-
     cursor:pointer;
-
-    animation:twinkle 3s infinite ease-in-out;
-
+    animation:memoryTwinkle 3s infinite ease-in-out;
     filter:
-        drop-shadow(0 0 8px rgba(255,255,255,.55))
-        drop-shadow(0 0 18px rgba(255,255,255,.25));
+        drop-shadow(0 0 10px rgba(255,255,255,.9))
+        drop-shadow(0 0 22px rgba(255,255,255,.55))
+        drop-shadow(0 0 38px rgba(255,255,255,.25));
 }
 
 .memory-star:hover{
